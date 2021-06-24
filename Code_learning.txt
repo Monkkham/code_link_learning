@@ -7,6 +7,8 @@ $ git remote add origin https://github.com/cw1github/my-git.git
 $ git pull --rebase origin master
 $ git push -u origin master
 
+
+
 Username and password for hosting
 
 Name:khampommasoulin@gmail.com
@@ -14,3 +16,17 @@ Password:52310548
 
 Name: cw1github@gmail.com
 Password: 52310548Mypass
+
+
+
+
+How to install Laravel project from github
+
+1. git clone 'url' or manually download zip project
+2. composer install
+3. npm install
+4. npm run dev
+   php artisan migrate
+5. copy .env.example .env
+6. php artisan key:generate
+7. php artisan serve
