@@ -1,0 +1,16 @@
+ອັບໂຫລດໂຟນເດີ້ຂື້ນກິດຮັບ
+           
+$ git init
+$ git add .
+$ git commit -m "hello"
+$ git remote add origin https://github.com/cw1github/my-git.git
+$ git pull --rebase origin master
+$ git push -u origin master
+
+Username and password for hosting
+
+Name:khampommasoulin@gmail.com
+Password:52310548
+
+Name: cw1github@gmail.com
+Password: 52310548Mypass
