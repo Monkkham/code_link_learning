@@ -12,10 +12,10 @@ $ git push -u origin master
 Username and password for hosting
 
 Name:khampommasoulin@gmail.com
-Password:52310548
+Password:52310548-khytour
 
 Name: cw1github@gmail.com
-Password: 52310548Mypass
+Password: 52310548Mypass-khytour
 
 
 
