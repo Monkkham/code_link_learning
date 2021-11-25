@@ -1,3 +1,24 @@
+ການນຳໃຊ້ Gitlab & Github
+1 git init ຮູ້ສະຖານະຟາຍ
+2 git add . ເພີ່ມເຂົ້າ
+3 git commit -m "comment" ຍືນຍັນ ເເລະ ຮູ້ວ່າວຽກຮອດໃສ
+4 git log  ກວດສອບເຄື່ອນໄຫວ
+5 git reset --hard ໃສ່ລະຫັດ  ຍ້ອນກັບເວີຊັ່ນເກົ່າ
+6 git branch ກວດຈັກແບຣນ
+7 git branch ຊື່  ສ້າງແບຣນ
+8 git branch --delete ຊື່ ລົບຊື່ແບຣນ
+9 git checkout ຊື່ ສະຫລັບແບຣນ
+10 git merge ລວມແບຣນ
+11 git remote origin URL
+12 git push origin ຊື່ແບຣນ
+13 git pull origin ຊື່ແບຣນ
+
+
+
+
+
+
+
 ອັບໂຫລດໂຟນເດີ້ຂື້ນກິດຮັບ
            
 $ git init
