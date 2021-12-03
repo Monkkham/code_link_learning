@@ -6,27 +6,56 @@
 5 git reset --hard ໃສ່ລະຫັດ  ຍ້ອນກັບເວີຊັ່ນເກົ່າ
 6 git branch ກວດຈັກແບຣນ
 7 git branch ຊື່  ສ້າງແບຣນ
-8 git branch --delete ຊື່ ລົບຊື່ແບຣນ
+8 git branch -D ຊື່ ລົບຊື່ແບຣນ
 9 git checkout ຊື່ ສະຫລັບແບຣນ
 10 git merge ລວມແບຣນ
-11 git remote origin URL
-12 git push origin ຊື່ແບຣນ
-13 git pull origin ຊື່ແບຣນ
+11 git remote -v ກວດເບິ່ງວ່າໂປຣເຈັກຢູ່ໃນ URL ຂອງກິດແລັບໃຜ
+12 git remote set-url origin URL ປ່ຽນ URL ກິດແລັບ
+13 git remote add origin URL
+14 git pull origin  ຊື່ແບຣນ
+15 git push origin ຊື່ແບຣນ
 
 
 
 
 
+1 create new project
+composer create-project --prefer-dist laravel/laravel example-app
+2 create with livewire
+composer require livewire/livewire
+3 livewire create component
+php artisan make:livewire HomeComponent
+4 create Register and login page by Jetstream
+composer require laravel/Jetstream
+php artisan jetstream:install livewire
+npm install && npm run dev
+5 create table is category
+php artisan make:model Category -m
+6 install table to database
+php artisan migrate
+7 Run project
+php artisan serve
 
 
-ອັບໂຫລດໂຟນເດີ້ຂື້ນກິດຮັບ
-           
-$ git init
-$ git add .
-$ git commit -m "hello"
-$ git remote add origin https://github.com/cw1github/my-git.git
-$ git pull --rebase origin master
-$ git push -u origin master
+// ການຕິດຕັ້ງຕ່າງໆ ໃນ Laravel
+php artisan make:controller PagesController  ສ້າງຟັງຊັ່ນຄວບຄຸມລິ້ງເມນູ
+php artisan make:migration create_employee_table
+php artisan migrate  ສ້າງຖານຂໍ້ມູນອໍໂຕ້
+php artisan make:model Demo -m
+php artisan make:controller EmployeeController  ສ້າງຄວບຄຸມພະນັກງານ
+composer require laravel/ui  ສ້າງ ui
+php artisan ui bootstrap --auth   ສ້າງ signin/signup ອໍໂຕ້
+php artisan make:controller PostController --resource ສ້າງຄວບຄຸມເມນູ
+php artisan route:list  ກວດເບິ່ງຈຳນວນເລົາເຕີ້
+php artisan make:middleware AdminMiddleware  ສ້າງແອັດມິນ
+php artisan make:factory CategoryFactory --model=Category  ສ້າງ factory
+php artisan db:seed
+
+ລິ້ງຈາວາສະຄິບ 
+https://sweetalert.js.org/guides/ ຈາວາສະຄິບ
+https://owlcarousel2.github.io/OwlCarousel2/demos/demos.html
+
+
 
 
 
