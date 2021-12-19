@@ -11,9 +11,10 @@
 10 git merge ລວມແບຣນ
 11 git remote -v ກວດເບິ່ງວ່າໂປຣເຈັກຢູ່ໃນ URL ຂອງກິດແລັບໃຜ
 12 git remote set-url origin URL ປ່ຽນ URL ກິດແລັບ
-13 git remote add origin URL
-14 git pull origin  ຊື່ແບຣນ
-15 git push origin ຊື່ແບຣນ
+13 git config --global user.email "kkham2021@gmail.com" ກວດສອບອີເມວຍືນຍັນ
+14 git remote add origin URL
+15 git pull origin  ຊື່ແບຣນ
+16 git push origin ຊື່ແບຣນ
 
 
 
