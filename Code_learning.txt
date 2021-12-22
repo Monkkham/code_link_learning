@@ -1,6 +1,6 @@
 ການນຳໃຊ້ Gitlab & Github
 1 git init ຮູ້ສະຖານະຟາຍ
-2 git add . ເພີ່ມເຂົ້າ
+2 git add . ເພີ່ມເຂົ້າທັງຫມົດ
 3 git commit -m "comment" ຍືນຍັນ ເເລະ ຮູ້ວ່າວຽກຮອດໃສ
 4 git log  ກວດສອບເຄື່ອນໄຫວ
 5 git reset --hard ໃສ່ລະຫັດ  ຍ້ອນກັບເວີຊັ່ນເກົ່າ
@@ -11,10 +11,13 @@
 10 git merge ລວມແບຣນ
 11 git remote -v ກວດເບິ່ງວ່າໂປຣເຈັກຢູ່ໃນ URL ຂອງກິດແລັບໃຜ
 12 git remote set-url origin URL ປ່ຽນ URL ກິດແລັບ
-13 git config --global user.email "kkham2021@gmail.com" ກວດສອບອີເມວຍືນຍັນ
-14 git remote add origin URL
-15 git pull origin  ຊື່ແບຣນ
-16 git push origin ຊື່ແບຣນ
+13 git remote add origin URL
+14 git pull origin  ຊື່ແບຣນ
+15 git push origin ຊື່ແບຣນ
+16 git clone URL ໂຄນໂປຣເຈັກມາລັ່ນ
+17 git clone --single-branch --branch monkdev URL ໂຄ່ນແບຣນເຈາະຈົງມາລັ່ນ
+18 git branch -M ຊື່ແບຣນ         ອັບຂື້ນພິເສດ
+19 git push -uf origin ຊື່ແບຣນ   ອັບຂື້ນພິເສດ
 
 
 
