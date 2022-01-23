@@ -55,9 +55,13 @@ php artisan make:middleware AdminMiddleware  ສ້າງແອັດມິນ
 php artisan make:factory CategoryFactory --model=Category  ສ້າງ factory
 php artisan db:seed
 
-ລິ້ງຈາວາສະຄິບ 
+ລິ້ງຈາວາສະຄິບ alert
 https://sweetalert.js.org/guides/ ຈາວາສະຄິບ
 https://owlcarousel2.github.io/OwlCarousel2/demos/demos.html
+
+ເທັມເພລດ
+https://adminlte.io/   ແອັດມິນ ແບັກເອັນ
+https://htmlcodex.com/demo/?item=1479  ເວບໄຊຟອນເອັນ
 
 
 
