@@ -88,3 +88,8 @@ How to install Laravel project from github
 5. copy .env.example .env
 6. php artisan key:generate
 7. php artisan serve
+
+
+Oracle
+username: kkham2021@gmail.com
+password: Mk52310548+
