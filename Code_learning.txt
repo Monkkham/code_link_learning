@@ -93,3 +93,10 @@ How to install Laravel project from github
 Oracle
 username: kkham2021@gmail.com
 password: Mk52310548+
+
+=> ປັບຂະຫນາດຂອງ Mysql
+max_execution_time = 3000
+max_input_time = 120
+memory_limit = 512M
+post_max_size = 1500M
+upload_max_filesize = 1500M
