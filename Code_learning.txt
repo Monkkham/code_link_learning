@@ -105,3 +105,9 @@ upload_max_filesize = 1500M
 Download Adobe
 https://cracksarehere.blogspot.com/search?q=photoshop
 password: cracksarehere.blogspot.com
+
+Oracle
+ sqlplus /nolog
+conn /as sysdba
+alter user system identified by system;
+conn system
