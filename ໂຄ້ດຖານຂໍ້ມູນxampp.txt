@@ -1,0 +1,320 @@
+﻿  1.ຄຳສັ່ງ Create
+USE employee;
+CREATE TABLE employeeskill(
+    empID int not null AUTO_INCREMENT,
+    skill varchar(20),
+    PRIMARY KEY (empID,skill),
+    FOREIGN KEY (empID) REFERENCES employee (empID))
+
+
+USE employee;
+CREATE TABLE division(
+    DivID tinyint not null AUTO_INCREMENT PRIMARY KEY,
+    DivName varchar(50))
+
+
+USE employee;
+CREATE TABLE customer(
+    custID int not null AUTO_INCREMENT PRIMARY KEY,
+    custName varchar(50),
+    custAddress varchar(100),
+    custProvince varchar(35),
+    contactPerson varchar(35),
+    contactTel char(11))
+
+USE employee;
+CREATE TABLE employee(
+    empID int not null AUTO_INCREMENT PRIMARY KEY,
+    empName varchar (45),
+    job varchar (50),
+    salary bigint,
+    DivID tinyint,
+    FOREIGN KEY (DivID) REFERENCES division(DivID))
+
+
+USE employee;
+CREATE TABLE contact(
+    custID int not null AUTO_INCREMENT,
+    empID int,
+    dateContact date,
+    hour float,
+    PRIMARY KEY (custID,empID,dateContact),
+    FOREIGN KEY (custID) REFERENCES customer (custID),
+    FOREIGN KEY (empID) REFERENCES employee (empID))
+
+   2.ຄົ້ນຫາຂໍ້ມູນແບບເຈາະຈົງລະຫັດ
+USE employee;
+SELECT custID,custName,custAddress,custprovince,contactPerson,contactPerson FROM customer
+where custID=1;
+
+  3.ເພີ່ມໂຄ້ດໃຫ້ເທໂບ້
+USE employee;
+ALTER TABLE employee
+ADD FOREIGN KEY (DivID) REFERENCES division(DivID);
+
+  4.ອັບເດດຂໍ້ມູນໃນຄໍລັ້ມ
+USE employee;
+UPDATE employee
+SET empID='1',empName='Thuk',job='IT',salary='1000'
+WHERE empID=1;
+
+  5.ຄຳສັ່ງຈອຍສອງຕາລາາງ
+USE employee;
+SELECT employee.empID,customer.custID,employee.DivID
+FROM employee
+INNER JOIN customer
+ON employee.empID=customer.custID;
+
+  6.ວຽກບ້ານສ້າງຖານຂໍ້ມູນນັກສຶກສາ
+USE projectme;
+CREATE TABLE Department(
+    DepartID tinyint not null AUTO_INCREMENT PRIMARY KEY,
+    DepartName varchar(40))
+
+
+USE projectme;
+CREATE TABLE subject(
+    subID tinyint not null AUTO_INCREMENT PRIMARY KEY,
+    subName varchar(40),
+    DepartID tinyint,
+    FOREIGN KEY (DepartID) REFERENCES department (DepartID))
+
+
+USE projectme;
+CREATE TABLE student(
+    stuID int not null AUTO_INCREMENT PRIMARY KEY,
+    stuName varchar(40),
+    stuSurname varchar(50),
+    stuAddress varchar(50),
+    stuPhone char(11),
+    subID tinyint,
+    FOREIGN KEY (subID) REFERENCES subject (subID))
+
+  7.ໂປເຈັກຂອງຂ້ອຍ
+USE register;
+CREATE TABLE student(
+    SID int not null AUTO_INCREMENT PRIMARY KEY,
+    Sname varchar(40),
+    Ssurname varchar(40),
+    Svillage varchar(40),
+    Sdistrict varchar(40),
+    Sprovince varchar(40),
+Svillagenow varchar(40),
+    SID tinyint,
+    XID tinyint,
+    PID tinyint,
+    BID tinyint,
+    FOREIGN KEY (SID) REFERENCES subject (SID),
+    FOREIGN KEY (XID) REFERENCES sex (XID),
+    FOREIGN KEY (PID) REFERENCES phone (PID),
+    FOREIGN KEY (BID) REFERENCES birthday (BID))
+    
+    8.ວຽກບ້ານກຸ່ມ2
+CREATE DATABASE registration;
+
+USE registration;
+CREATE TABLE Subject(
+    SubjectID int not null AUTO_INCREMENT PRIMARY KEY,
+    SubjectName varchar(40),
+    Credit char(10))
+
+USE registration;
+CREATE TABLE Student(
+    StudentID int not null AUTO_INCREMENT PRIMARY KEY,
+    StudentName varchar(40))
+
+
+USE registration;
+CREATE TABLE Enrollment(
+    StudentID int not null AUTO_INCREMENT,
+    SubjectID int,
+    Grade varchar(5),
+    Semaster varchar(30),
+    Year varchar(20),
+    PRIMARY KEY (studentID,subjectID,Grade),
+    FOREIGN KEY (studentID) REFERENCES student (studentID),
+    FOREIGN KEY (subjectID) REFERENCES subject (subjectID))
+
+  9.ຄຳສັ່ງເພີ່ມຄໍລັ້ມ
+USE registration;
+ALTER TABLE student ADD Province varchar(40);
+
+   10.ຄົ້ນຫາ Grade ນັກສືກສາ
+USE registration;
+SELECT studentID,subjectID,Grade FROM enrollment
+WHERE Grade='B';
+
+   
+   11.ຄົ້ນຫາທຸກຄໍລັ້ມເກດນັກສຶກສາທີ່ໄດ້ເກດ   A
+USE registration;
+SELECT 
+student.StudentID,student.StudentName,student.province,enrollment.Grade
+FROM student
+INNER JOIN enrollment ON student.StudentID=enrollment.StudentID WHERE enrollment.Grade='A';
+
+   12.Join ເອົາ 3 colunm ໃນ 3 Table ມາລວມກັນ
+USE registration;
+SELECT student.StudentName,subject.SubjectID,enrollment.Grade
+FROM student
+INNER JOIN subject ON student.StudentID=subject.SubjectID
+INNER JOIN enrollment ON student.StudentID=enrollment.StudentID;
+
+   13. ຄົ້ນຫາແບບ ເຈາະຈົງໄອດີ
+USE registration;
+SELECT StudentID,SubjectID,Grade FROM enrollment
+WHERE SubjectID=1;
+    14. ນັບຈໍຳນວນນັກສຶກສາມາຈາກແຕ່ລະເເຂວງ
+USE registration;
+SELECT COUNT(*) AS ອຸດົມໄຊ FROM student WHERE province="ອຸດົມໄຊ";
+
+   ວຽກບ້ານກຸ່ມ 1
+    15. CREATE DATABASE Onsale;
+
+USE onsale;
+CREATE TABLE Customers(custID varchar(5) null,
+custName varchar(30),
+custAddress varchar(50),
+primary key (custID),
+UNIQUE KEY(CustID))ENGINE=INNODB;
+
+USE onsale;
+CREATE TABLE Products
+(productID varchar(5) NULL, 
+productName varchar(30), 
+price varchar(50),
+PRIMARY KEY (productID),
+UNIQUE KEY(productID))
+ENGINE=INNODB;
+
+USE onsale;
+CREATE TABLE Orders
+(OrderID varchar(5) Not null,  
+ OrderDate date, 
+ custID varchar(5),  
+ PRIMARY KEY (OrderID),  
+ INDEX (custID),  
+ FOREIGN KEY (custID) REFERENCES  Customers(custID) 
+ ON DELETE SET NULL ON UPDATE CASCADE) ENGINE=INNODB;
+
+USE onsale;
+CREATE TABLE OrderItems 
+(OrderID varchar(5) Not null,  
+ ProductID char(5) NOT NULL,  
+ Quantity SMALLINT (10),  
+ PRIMARY KEY (OrderID, ProductID),  
+ INDEX(OrderID), INDEX (ProductID),  
+ FOREIGN KEY(OrderID) REFERENCES Orders(OrderID) 
+ ON DELETE CASCADE ON UPDATE CASCADE, 
+ FOREIGN KEY(productID)  REFERENCES Products(productID) 
+ ON DELETE RESTRICT ON UPDATE CASCADE) ENGINE=INNODB;
+
+   16 Transact-SQL
+USE onsale;
+INSERT INTO customers
+VALUES ('2','souvun','pary');
+
+ 17.ສະແດງຂ ້ມູນທ ງໝ ດຂອງແຕັ່ລະຕາຕະລາງ
+ SELECT * FROM customers; 
+SELECT * FROM products; 
+SELECT * FROM orders; 
+SELECT * FROM orderitems; 
+
+ 18.ຂຽນຄ າສ ັ່ງສະແດງລະຫ ດສິນຄ້າ, ຊ ັ່, ຈ ານວນ ເຊິັ່ງສິນຄ້າຂ ້ນຕ ້ນດ້ວຍອ ກສອນ E 
+ USE onsale;
+SELECT productID,productName, 
+price FROM products 
+where productName LIKE 'E%'
+
+ 19..ນ ບຈ ານວນໃບສ ັ່ງຊ ້ຂອງລູກຄ້າຈາຕາຕະລາງ Orderitems 
+ USE onsale;
+SELECT Count(DISTINCT OrderID) FROM orderitems
+
+ 20.ສະແດງລາຍລະອຽດສິນຄ້າ ທ ັ່ລາຄາແພງສຸດ,ຖ ກສຸດ, ແລະ ລາຄາສະເລັ່ຍ 
+ USE onsale;
+SELECT MAX(price)FROM products;
+
+USE onsale;
+SELECT MIN(price)FROM products;
+
+USE onsale;
+SELECT AVG(price) FROM products;
+
+ 21.ສະແດງ ລະຫ ດໃບສ ັ່ງຊ ້,ຊ ັ່ລູກຄ້າ,ຊ ັ່ສິນຄ້າ ແລະ ຈ ານວນທ ັ່ຊ ້ Left join 
+ USE onsale;
+SELECT orderitems.OrderID,customers.custName,
+products.productName,orderitems.Quantity 
+FROM orderitems
+LEFT JOIN customers ON customers.custID=orderitems.OrderID 
+LEFT JOIN products ON products.productID=orderitems.OrderID 
+
+ 22..ຂຽນຄໍາສັ່ງສະແດງ ລະຫັດໃບສັ່ງຊື້,ຊື່ລູກຄ້າ,ຊື່ສິນຄ້າ ແລະ ຈໍານວນສິນຄ້າ right join 
+ USE onsale;
+SELECT orderitems.OrderID,customers.custName, products.productName,orderitems.Quantity 
+FROM orderitems 
+RIGHT JOIN customers ON customers.custID = orderitems.OrderID 
+RIGHT JOIN products ON products.productID = orderitems.OrderID 
+
+ 23 ຄົ້ນຫາລູກຄ້າໄດ້ສັ່ງຊື້ສິນຄ້າ
+USE onsale;
+SELECT customers.custID,customers.custName,customers.custAddress FROM customers
+LEFT JOIN orders ON customers.custID=orders.custID WHERE orders.OrderID
+
+ 24 ຄົ້ນຫາລູກຄ້າບໍ່ໄດ້ສັ່ງຊື້ສິນຄ້າ
+USE onsale;
+SELECT customers.custID,customers.custName,customers.custAddress FROM customers
+LEFT JOIN orders ON customers.custID=orders.custID WHERE orders.OrderID is null
+
+ 25 ສ້າງວິວສະເພາະ Table 1
+CREATE VIEW enrollmentcw1 AS
+SELECT StudentID,SubjectID,Grade,Semaster,Year FROM enrollment
+WHERE Grade='A';
+
+  26 ສ້າງວິວ ຫລາຍ  Table ເຊື່ອມກັນ
+CREATE VIEW studentcw1 AS
+SELECT student.StudentID,student.StudentName,subject.SubjectName,enrollment.Grade
+FROM student
+INNER JOIN subject ON student.StudentID=subject.SubjectID
+INNER JOIN enrollment ON student.StudentID=enrollment.StudentID;
+
+USE hotel;
+SELECT guest.guestID,guest.firstName,guest.LastName,guest.phone,guest.address,room.roomID
+ FROM ((reservation
+INNER JOIN guest ON reservation.guestID=guest.guestID)
+INNER JOIN room ON reservation.roomID=room.roomID)
+ WHERE reservation.roomID='R201';
+
+27 ລົບຄໍລັ້ມອອກ
+USE buyphone;
+ALTER IGNORE TABLE orders DROP qty;
+
+28 ປ່ຽນຊື່ຄໍລັ້ມໃນຕາລາງ
+ALTER TABLE players CHANGE username name varchar(255);
+
+
+
+
+29 ເພີ່ມ ຄີສພຮອງ
+CREATE TABLE CUSTOMERS(
+   ID   INT              NOT NULL,
+   NAME VARCHAR (20)     NOT NULL,
+   AGE  INT              NOT NULL,
+   ADDRESS  CHAR (25) ,
+   SALARY   DECIMAL (18, 2),       
+   PRIMARY KEY (ID)
+);
+CREATE TABLE ORDERS (
+   ID          INT        NOT NULL,
+   DATE        DATETIME, 
+   CUSTOMER_ID INT references CUSTOMERS(ID),
+   AMOUNT     double,
+   PRIMARY KEY (ID)
+);
+ALTER TABLE ORDERS 
+   ADD FOREIGN KEY (Customer_ID) REFERENCES CUSTOMERS (ID);
+
+ALTER TABLE ORDERS
+   DROP FOREIGN KEY;
+
+
+
+
