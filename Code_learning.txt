@@ -58,6 +58,32 @@ php artisan db:seed
 ລິ້ງຈາວາສະຄິບ alert
 https://sweetalert.js.org/guides/ ຈາວາສະຄິບ
 https://owlcarousel2.github.io/OwlCarousel2/demos/demos.html
+1 ຕິດຕັ້ງໃສ່ cmd 
+npm install sweetalert2
+2 ອິມພອດລິ້ງໃສ່ໃນສະຕ່າຍ ເເລະ ວາງໂຄ້ດນີ້ໃສ່
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    window.addEventListener('swal',function(e) {
+        Swal.fire({
+            title:  e.detail.title,
+            icon: e.detail.icon,
+            iconColor: e.detail.iconColor,
+            timer: 3000,
+            toast: true,
+            position: 'top-right',
+            toast:  true,
+            showConfirmButton:  false,
+        });
+    });
+</script>
+3 ເພິີ່ມໂຄ້ດນີ້ໃສ່ຟັງຊັ້ນ .php
+$this->dispatchBrowserEvent('swal', [
+    'title' => 'Item has been removed.',
+    'icon'=>'success',
+    'iconColor'=>'blue',
+]);
+
+
 
 ເທັມເພລດ
 https://adminlte.io/   ແອັດມິນ ແບັກເອັນ
