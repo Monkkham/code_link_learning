@@ -137,3 +137,21 @@ Oracle
 conn /as sysdba
 alter user system identified by system;
 conn system
+
+
+
+ຂັ້ນຕອນການປ່ຽນ font display PC
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts]
+"Segoe UI (TrueType)"=""
+"Segoe UI Bold (TrueType)"=""
+"Segoe UI Bold Italic (TrueType)"=""
+"Segoe UI Italic (TrueType)"=""
+"Segoe UI Light (TrueType)"=""
+"Segoe UI Semibold (TrueType)"=""
+"Segoe UI Symbol (TrueType)"=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontSubstitutes]
+"Segoe UI"="Lao_Modern2"
+
+1 Step Installation
+ coppy this code to notepad and save us set name to => Corbel Font.reg and click to install after that restart PC successfully
