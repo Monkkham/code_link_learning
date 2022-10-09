@@ -129,8 +129,11 @@ upload_max_filesize = 1500M
 
 
 Download Adobe
+Preiereoro
 https://flexadia.com/download-adobe-premiere-pro-cc-2022-free-download/
 password: 123
+photoshop
+https://drive.google.com/file/d/1a__zJsUtpMqDcSXAIVBNnVZS-cBLB2b4/view
 
 Oracle
  sqlplus /nolog
