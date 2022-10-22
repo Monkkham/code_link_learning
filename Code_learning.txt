@@ -1,4 +1,7 @@
 ການນຳໃຊ້ Gitlab & Github
+https://phoenixnap-com.translate.goog/kb/how-to-use-git?_x_tr_sl=en&_x_tr_tl=th&_x_tr_hl=lo&_x_tr_pto=wapp
+0  Step allowed gitlab after create
+ click project_name => Settings => Repository => Protected branches => Unprotect red button and success
 1 git init ຮູ້ສະຖານະຟາຍ
 2 git add . ເພີ່ມເຂົ້າທັງຫມົດ
 3 git commit -m "comment" ຍືນຍັນ ເເລະ ຮູ້ວ່າວຽກຮອດໃສ
@@ -12,12 +15,17 @@
 11 git remote -v ກວດເບິ່ງວ່າໂປຣເຈັກຢູ່ໃນ URL ຂອງກິດແລັບໃຜ
 12 git remote set-url origin URL ປ່ຽນ URL ກິດແລັບ
 13 git remote add origin URL
-14 git pull origin  ຊື່ແບຣນ
-15 git push origin ຊື່ແບຣນ
+14 git pull --rebase origin  ຊື່ແບຣນ
+15 git push -f origin ຊື່ແບຣນ
 16 git clone URL ໂຄນໂປຣເຈັກມາລັ່ນ
 17 git clone --single-branch --branch monkdev URL ໂຄ່ນແບຣນເຈາະຈົງມາລັ່ນ
 18 git branch -M ຊື່ແບຣນ         ອັບຂື້ນພິເສດ
 19 git push -uf origin ຊື່ແບຣນ   ອັບຂື້ນພິເສດ
+20 git pull origin master --allow-unrelated-histories  ພູປະຫວັດ
+21 git branch -m ຊຶ່ແບຣນ ປ່ຽນຊື່ ແບຣນ
+
+Step add developer to gitlab
+1 click to project_name =>  Project information => Members and add user or email success..
 
 
 
