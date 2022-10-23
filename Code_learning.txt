@@ -27,6 +27,9 @@ https://phoenixnap-com.translate.goog/kb/how-to-use-git?_x_tr_sl=en&_x_tr_tl=th&
 Step add developer to gitlab
 1 click to project_name =>  Project information => Members and add user or email success..
 
+Step Deploy project to hosting
+2 coppy SSH url from git and goto past => Repository in cpanel hosting => coppy code SSH => past to Deploy Key and after that click deploy success
+
 
 
 
